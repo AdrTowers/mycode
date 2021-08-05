@@ -13,5 +13,6 @@ poke_file= "pokedex.txt"
 # Reading in a csv file?
 #pokedex = pd.read_csv(excel_file)
 
+# Figure out how to do this
 with open("pokedex.txt", "r") as comicfile:
     
