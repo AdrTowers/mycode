@@ -8,29 +8,35 @@ print("""
         *--------------------------------*
 """)
 
-turns = 0
-gryffindor = 0
-hufflepuff = 0
-ravenclaw = 0
-slytherin = 0
+turns = 0 # Keep track of turns as the game progresses
+
+# Scores will house the number of times a particular answer is made
+scores= {
+         "gryffindor": 0,
+         "hufflepuff": 0,
+         "ravenclaw": 0,
+         "slytherin": 0
+         }
 index = -1
 
 while turns < 12:
     for quest in questions:
         index += 1
         turns += 1
+        # Each question is pulled from an external dictionary
         userinput = input(print(questions[index]["question"])).title()
         if userinput == "A":
-            gryffindor += 1
+            scores["gryffindor"] += 1
         elif userinput == "B":
-            hufflepuff += 1
+            scores["hufflepuff"] += 1
         elif userinput == "C":
-            ravenclaw += 1
+            scores["ravenclaw"] += 1
         elif userinput == "D":
-            slytherin += 1
+            scores["slytherin"] += 1
         elif userinput == "Quit":
-            exit()    
+            exit()     
 
 if turns == 12:
-    print("Congrats! You made it to the end!!")
-    print("house", gryffindor, hufflepuff, ravenclaw, slytherin)
+    print("Congrats!! The house you belong to is....", max(scores, key=scores.get),"!!!")
+# if userinput != "A" or "B" or "C" or "D" or "Quit":
+#     print("You must choose either A, B, C, D or quit.")
