@@ -1,17 +1,20 @@
 #!/usr/bin/env python3
 
-import pandas as pd
+import csv
 
-# Define the name of our xls file
-poke_file= "pokedex.txt"
+# open data file and loop through it
+with open("pokedex.txt", "r") as pokefile:
+    # counter to create unique file names
+    i = 0
+    # loop across our open file line by line
+    for row in csv.reader(pokefile):
+        i = i + 1  # increase i by 1 (to create unique admin.rc file names)
+        # this f string says "fill in the value of i"
+        filename = f"poke.txt{i}"
 
-# Reading in a spreadsheet?
-#pokedex = pd.read_excel(excel_file, sheet_name=0, index_col=0)
+        # open a file via "with". This file will autoclose when the indentations stop
+        with open(filename, "w") as pokemonfile:
+            print("This is a test of my file" + row[0], file=pokemonfile)
 
-#pokedex2 = pd.read_excel(excel_file, sheet_name=1, index_col=0)
-
-# Reading in a csv file?
-#pokedex = pd.read_csv(excel_file)
-
-with open("pokedex.txt", "r") as comicfile:
-    
+# Display when the looping is complete
+print("File has been created!")    
