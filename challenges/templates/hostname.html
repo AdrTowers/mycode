@@ -1,0 +1,14 @@
+<!doctype html>
+
+<title>Starter Data!</title>
+<ul>
+{% for user in groups %}
+  <li>Hostname: {{ user.hostname }}</li>
+  <li>IP: {{ user.ip }}</li>
+  <li>FQDN: {{ user.fqdn }}</li>
+{% endfor %}
+</ul>
+
+<br>
+<li><a href="/form">Click here to add more data</a></li>
+<li><a href = "/logout"></b>Click here to log out</b></a></li>
