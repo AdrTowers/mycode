@@ -4,6 +4,7 @@ from flask import Flask
 from flask import redirect
 from flask import request
 from flask import render_template
+from flask import make_response
 
 # Flask constructor takes the name of current
 # module (__name__) as argument
@@ -18,20 +19,33 @@ def trivia_question():
 
 @app.route("/login", methods = ["POST"])
 def ans_quest():
-    if request.method == "POST":
-        userans = request.form.get("userans")
-        if userans == "slap" :
+    if request.json:
+        joke = request.json
+        if joke['userans'] == "slap":
             return redirect("/correct")    
         else:
             return redirect("/")
-    else: 
-        return redirect("/")
+
+    if request.form.get("userans"):
+        userans = request.form.get("userans")
+        if userans == "slap":
+            #resp now contains the response we normally wpuld have returned
+            resp = make_response(redirect("/correct"))
+            resp.set_cookie("slappy", userans)
+            return resp
+        else:
+            return redirect("/")
+    else:
+        return "wakka wakka"
 
 @app.route("/correct")
 def correct_ans():
-    return "You got the correct answer!!"
+    request.cookies.get("slappy")
+    if request.cookies.get("slappy") == "slap":
+        return "that is correct"
+    else:
+        return "You have yet to answer the question correctly"
 
 if __name__ == "__main__":
    app.run(host="0.0.0.0", port=2224) # runs the application
    # app.run(host="0.0.0.0", port=2224, debug=True) # DEBUG MODE
-
