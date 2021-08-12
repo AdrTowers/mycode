@@ -1,0 +1,21 @@
+#,Name,Type 1,Type 2,Total,HP,Attack,Defense,Sp. Atk,Sp. Def,Speed,Generation,Legendary
+339,Barboach,Water,Ground,288,50,48,43,46,41,60,3,False
+90,Shellder,Water,,305,30,65,100,45,25,40,1,False
+222,Corsola,Water,Rock,380,55,55,85,65,85,35,2,False
+368,Gorebyss,Water,,485,55,84,105,114,75,52,3,False
+86,Seel,Water,,325,65,45,55,45,70,45,1,False
+87,Dewgong,Water,Ice,475,90,70,80,70,95,70,1,False
+369,Relicanth,Water,Rock,485,100,90,130,45,65,55,3,False
+370,Luvdisc,Water,,330,43,30,55,40,65,97,3,False
+91,Cloyster,Water,Ice,525,50,95,180,85,45,70,1,False
+245,Suicune,Water,,580,100,75,115,90,115,85,2,True
+393,Piplup,Water,,314,53,51,53,61,56,40,4,False
+422,Shellos,Water,,325,76,48,48,57,62,34,4,False
+423,Gastrodon,Water,Ground,475,111,83,68,92,82,39,4,False
+535,Tympole,Water,,294,50,50,40,50,40,64,5,False
+536,Palpitoad,Water,Ground,384,75,65,55,65,55,69,5,False
+537,Seismitoad,Water,Ground,509,105,95,75,85,75,74,5,False
+223,Remoraid,Water,,300,35,65,35,65,35,65,2,False
+647,KeldeoOrdinary Forme,Water,Fighting,580,91,72,90,129,90,108,5,False
+647,KeldeoResolute Forme,Water,Fighting,580,91,72,90,129,90,108,5,False
+80,SlowbroMega Slowbro,Water,Psychic,590,95,75,180,130,80,30,1,False
