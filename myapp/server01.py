@@ -54,6 +54,34 @@ def addrec():
         con.close()     # successful or not, close the connection to sqliteDB
         return render_template("result.html",msg = msg)    #
 
+@app.route('/removerec')
+def delete_student():
+    return render_template('remove.html')
+
+@app.route('/remove',methods = ['DELETE'])
+def deleterec():
+    try:
+        nm = request.form['nm']         # student name
+        
+        # connect to sqliteDB
+        with sql.connect("database.db") as con:
+            cur = con.cursor()
+
+            # place the info from our form into the sqliteDB
+            cur.execute("DELETE FROM students WHERE (name) VALUES (?)",(nm) )
+            # commit the transaction to our sqliteDB
+            con.commit()
+        # if we have made it this far, the record was successfully added to the DB
+        msg = "Record successfully deleted"
+
+    except:
+        con.rollback()  # this is the opposite of a commit()
+        msg = "error in delete operation"    # we were NOT successful
+
+    finally:
+        con.close()     # successful or not, close the connection to sqliteDB
+        return render_template("list.html",msg = msg)
+
 # return all entries from our sqliteDB as HTML
 @app.route('/list')
 def list_students():
