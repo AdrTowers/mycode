@@ -8,13 +8,14 @@ def main():
 
     # store pokedex data
     pokedex1 = pd.read_csv(csv_file, index_col=0)
-    # DF has 5 rows and 13 columns
+
+    # pokedex has 20 rows and 12 columns
     print("First 20 pokemon\n", pokedex1.head(20))
 
     # sort by the pokemon Type 1
     sorted_by_Type1 = pokedex1.sort_values(["Type 1"], ascending=False)
 
-    # Sort by the pokemon Name
+    # Sort by the pokemon Name in ascending
     sorted_by_name = pokedex1.sort_values(["Name"], ascending=True)
 
     # Data is sorted by values in a column
