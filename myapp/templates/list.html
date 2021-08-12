@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+   <body>
+      <table border = 1>
+         <thead>
+            <td>Name</td>
+            <td>Address</td>
+            <td>City</td>
+            <td>Pincode</td>
+         </thead>
+         
+         {% for row in rows %}
+            <tr>
+               <td>{{ row["name"] }}</td>
+               <td>{{ row["addr"] }}</td>
+               <td>{{ row["city"] }}</td>
+               <td>{{ row["pin"] }}</td>	
+            </tr>
+         {% endfor %}
+      </table>
+
+      <form action = "/delete" method = "DELETE">
+         <p><h3>Enter user name you wish to delete:</h3></p>
+         <p><input type = "text" name = "nm"/></p>
+         <p><input type = "submit" value = 'Delete'/></p>
+      </form>
+      <a href = "/">Go back to home page</a>
+   
+   
+   
+   </body>
+</html>
+
