@@ -5,6 +5,18 @@ import requests
 
 def main():
     
+    print(f"""
+                ╔══╗           ╔╗           ╔╗ ╔╗╔═══╗            
+                ║╔╗║           ║║           ║║ ║║║╔═╗║            
+                ║╚╝╚╗╔══╗╔╗╔╗╔╗║║ ╔╗╔═╗ ╔══╗║╚═╝║║╚══╗╔══╗╔╗╔╗╔══╗
+                ║╔═╗║║╔╗║║╚╝╚╝║║║ ╠╣║╔╗╗║╔╗║╚══╗║╚══╗║║╔╗║║║║║║╔╗║
+                ║╚═╝║║╚╝║╚╗╔╗╔╝║╚╗║║║║║║║╚╝║   ║║║╚═╝║║╚╝║║╚╝║║╚╝║
+                ╚═══╝╚══╝ ╚╝╚╝ ╚═╝╚╝╚╝╚╝╚═╗║   ╚╝╚═══╝╚══╝╚══╝║╔═╝
+                                        ╔═╝║                  ║║  
+                                        ╚══╝                  ╚╝  
+
+    """)
+
     # Ask the user for input in order to submit request
     user_link = input("Enter the wikipedia url of the movie you wish to find out more about.\n")
 
