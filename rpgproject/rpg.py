@@ -179,6 +179,14 @@ while True:
             else:
                 print("You don't have sword in inventory to kill the", rooms[currentRoom]['item'])
 
+    #     # teleportation!
+    # if move[0] == 'teleport':
+    #     if 'potion' in inventory:
+    #         print("Teleporting to", move[1])
+    #         currentRoom = rooms[move[1]]
+    #     else:
+    #         print("You need to drink a potion!")
+
     # if they type "swing"
     if move[0] == 'swing':
         if 'sword' in inventory:
